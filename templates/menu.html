@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>{% block title %}{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="/static/css/login.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">-->
+<style>
+    body{margin: 0;
+    background-color: #dae4e5;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  background-color:#6698cb;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+    font-size: 30px;
+}
+
+li a:hover {
+    color: white;
+    background-color: #111;
+}
+.btn {
+    padding: 0.5em 0.2em 1em;
+    border-radius: 10px;
+    left: 30%;
+    margin: 20px auto;
+    color: #fbdedb;
+    background-color: #fbdedb;
+    display: inline-block;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    font-family: sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    -webkit-box-shadow: 0 -0.3rem 0 rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 -0.3rem 0 rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 -0.3rem 0 rgba(0, 0, 0, 0.1) inset;
+    align-self: center;
+}
+.btn:hover, .btn:focus {
+    opacity: 0.9;
+}
+.btn:active {
+    -webkit-transform: scale(0.80);
+    -moz-transform: scale(0.80);
+    -ms-transform: scale(0.80);
+    -o-transform: scale(0.80);
+    transform: scale(0.80);
+}
+
+.sky {
+    background-color: #6698cb;}
+.select{top:90px;margin: 0;position: relative;}
+
+.content {
+  	width: 1000px;
+  	margin: 0 auto;
+    font-size: 19px;
+}
+.content h2 {
+  	margin: 0;
+  	padding: 25px 0;
+  	font-size: 22px;
+  	border-bottom: 1px solid #e0e0e3;
+  	color: #4a536e;
+}
+.content > p, .content > div {
+  	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  	margin: 25px 0;
+  	padding: 25px;
+	background-color: #fff;
+}
+.content > p table td, .content > div table td {
+	padding: 5px;
+}
+.content > p table td:first-child, .content > div table td:first-child {
+	font-weight: bold;
+	color: #4a536e;
+	padding-right: 15px;
+}
+.content > div p {
+	padding: 5px;
+	margin: 0 0 10px 0;
+}
+.button
+            {
+                background-color: #99ccff;
+                color: black;
+                text-align: center;
+                padding: 15px 32px;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+            }
+</style>
+
+
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper)
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    -->
+    <!-- Option 2: jQuery, Popper.js, and Bootstrap JS
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    -->
+<body>
+<ul>
+    <li style="float: left;"><a href="#"><img src="/static/img/logo.png" alt="logo" width="90px" height="90px"></a></li>
+    <li style="float: right; padding-top: 30px; padding-right: 15px;"><a href="{{ url_for('logout') }}" style="float:right;">LOG OUT</a></li>
+</ul>
+<br>
+  <div class="content">
+      {% block content %}{% endblock %}
+  </div>
+  <hr>
+    <h2 style="padding-left: 550px;">Select the disease you want to predict</h2>
+  <div style="padding-left: 650px;" >
+  <a href="{{ url_for('diabetes') }}"><button class="btn sky" style="text-align: center;">Predict Diabetes</button></a>
+  </div>
+  <div style="padding-left: 620px;">
+  <a href="{{ url_for('heart') }}"><button class="btn sky" style="text-align: center;">Predict Heart Disease</button></a>
+  </div>
+    <br>
+
+</body>
+</html>

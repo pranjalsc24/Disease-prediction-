@@ -1,0 +1,34 @@
+{% extends 'menu.html' %}
+
+{% block title %} Profile {% endblock %}
+
+{% block content %}
+  <div>
+    <p>Your details are below:</p>
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>{{ USERS[0] }}</td>
+        </tr>
+        <tr>
+            <td>Username:</td>
+            <td>{{ USERS[1] }}</td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td>{{ USERS[3] }}</td>
+        </tr>
+        <tr>
+            <td>Age:</td>
+            <td>{{ USERS[4] }}</td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>{{ USERS[5] }}</td>
+        </tr>
+    </table>
+      <br>
+    <a href="{{ url_for('update') }}"><input type="button" class="button" value="Update Details"></a>
+  </div>
+{% endblock %}
+

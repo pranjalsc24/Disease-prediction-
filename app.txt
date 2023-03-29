@@ -1,0 +1,129 @@
+from flask import Flask, render_template, request
+import mysql.connector
+import pickle
+import pandas as pd
+import numpy as np
+
+app = Flask(__name__)
+conn = mysql.connector.connect(host="remotemysql.com", user="WWR8ijuex9", password="XeheKtuqvX", database="WWR8ijuex9")
+cursor = conn.cursor()
+modeld = pickle.load(open("Diabetes.pkl", "rb"))
+modelh = pickle.load(open("model.pickle", "rb"))
+
+
+@app.route('/', methods=['GET', 'POST'])
+def home():
+    return render_template('home.html')
+
+
+@app.route('/diabetes')
+def diabetes():
+    return render_template('diabetes.html')
+
+@app.route('/diabetesm')
+def diabetesm():
+    return render_template('diabetes_med.html')
+
+@app.route('/heart')
+def heart():
+    return render_template('heart.html')
+
+@app.route('/heartm')
+def heartm():
+    return render_template('heart_med.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/predictd', methods=['POST'])
+def predictd():
+    # For rendering results on the HTML page
+    prg = request.form['prg']
+    glc = request.form['gl']
+    bp = request.form['bp']
+    skt = request.form['sk']
+    ins = request.form['ins']
+    bmi = request.form['BMI']
+    dpf = request.form['ped']
+    age = request.form['age']
+
+    prg = int(prg)
+    glc = int(glc)
+    bp = int(bp)
+    skt = int(skt)
+    ins = int(ins)
+    bmi = float(bmi)
+    dpf = float(dpf)
+    age = int(age)
+
+    row_df = pd.DataFrame([pd.Series([prg, glc, bp, skt, ins, bmi, dpf, age])])
+    print(row_df)
+    prediction = modeld.predict_proba(row_df)
+    data = np.array([[prg, glc, bp, skt, ins, bmi, dpf, age]])
+    my_prediction = modeld.predict(data)
+    output = '{0:.{1}f}'.format(prediction[0][1], 2)
+    if my_prediction == "1":
+        return render_template('diabetes.html', pred='You have Diabetes. Please Consult a Doctor')
+    else:
+        output = str(float(output) * 100) + '%'
+        return render_template('diabetes.html',
+                               pred=f'You do not have Diabetes. Probability of having Diabetes is {output}')
+
+@app.route('/predicth', methods=['POST'])
+def predicth():
+    int_features = [float(x) for x in request.form.values()]
+    final_features = [np.array(int_features)]
+    prediction = modelh.predict(final_features)
+    if prediction == [1]:
+        return render_template('heart.html', pred='You have Heart Disease. Please consult a doctor')
+    elif prediction == [0]:
+        return render_template('heart.html', pred='You do not have Heart Disease.')
+
+
+app.run(debug=True)
+
+
+@app.route('/login_validation', methods=['POST'])
+def login_validation():
+    username = request.form.get('username')
+    password = request.form.get('password')
+
+    cursor.execute("""SELECT* FROM `USERS` WHERE `Username` LIKE '{}' AND `Password` LIKE '{}'"""
+                   .format(username, password))
+
+    users = cursor.fetchall()
+    if len(users) > 0:
+        return render_template('menu.html')
+    else:
+        return render_template('login.html')
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+
+@app.route('/registration', methods=['POST'])
+def registration():
+    username = request.form.get('rusername')
+    email = request.form.get('remail')
+    password = request.form.get('rpassword')
+
+    cursor.execute("""INSERT INTO `USERS` """)
+    conn.commit()
+    return render_template('login.html')
+
+
+@app.route('/menu')
+def menu():
+    return render_template('menu.html')
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

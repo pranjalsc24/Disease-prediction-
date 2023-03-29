@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<title>About</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/css/login.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding:20px;
+  height: 600px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px;
+    solid:white;
+  text-align: left;
+  padding: 8px;
+}
+
+
+ p.a {
+	font-size: 17px;
+     font-family: Arial, serif;
+	}
+
+p.b {
+	font-size: 24px;
+    font-family: Arial, serif;
+	}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+  overflow: hidden;
+  background-color:#6698cb;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover {
+    color: white;
+    background-color: #111;
+}
+
+</style>
+<body style="background-color: #dae4e5;">
+<ul>
+    <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+    </ul>
+ <h1 style="text-align: center;">ABOUT</h1>
+
+ <div class="row">
+  <div class="column" >
+    <img src="/static/img/logo.png"  width="400" height="350" style="align-self: center;">
+    <p class="a">Health Risk Estimator is a disease prediction system where you can predict whether you are at a risk of having Diabetes or Heart Disease.The values and symptoms on various parameters entered by the user will enable the model to predict if a  person is at a risk of disease.The system  will provide the results based on the features extracted .It also saves a lot of time for the patients or doctors and they can further proceed for treatments or other procedures faster.</p>
+  </div>
+ <div class="column">
+
+   <table>
+  <tr>
+    <th></th>
+    <th></th>
+      </tr>
+  <tr>
+    <td><img src="/static/img/disease.png"width="150" height="150" align="left"></td>
+    <td><p class="b">Select the Disease you want to predict.</p></td>
+    </tr>
+  <tr>
+    <td><img src="/static/img/details.png"width="120" height="120" align="left"></td>
+    <td><p class="b">Enter the value of the parameters.</p></td>
+    </tr>
+  <tr>
+    <td><img src="/static/img/medication.png"width="150" height="150" align="left"></td>
+    <td><p class="b">View Medications on prediction of disease.</p></td>
+    </tr>
+  </table>
+  </div>
+</div>
+
+</body>
+</html>
