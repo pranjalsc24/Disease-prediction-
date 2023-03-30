@@ -11,6 +11,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/static/css/login.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Patua+One&family=Poppins:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
 <style>
     body {
   margin:0;
@@ -18,6 +21,7 @@
 /*background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7);  /* Chrome 10-25, Safari 5.1-6 */
 /*background: linear-gradient(to right, #fffcdc, #d9a7c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-image: url("/static/img/bg.png");
+    font-family: 'Poppins', sans-serif;
 
 }
 
@@ -34,21 +38,24 @@
         transform: translateX(25%);
     }
 }
-nav
+/* nav
 {
-
     display: block;
+    background: #114adb;
+    height: 7rem;
+    top: 0%;
+    /* display: block;
     margin:0;
   padding-left: 20px;
-  overflow: hidden;
-  background: #1c92d2;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  overflow: hidden; */
+  /* background: #1c92d2;  fallback for old browsers */
+/* background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  Chrome 10-25, Safari 5.1-6 */
+/* background: linear-gradient(to right, #f2fcfe, #1c92d2); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 
-}
+/* } */ 
 
-nav a
+/* nav a
 {
     position: relative;
     width: 33.333%;
@@ -56,11 +63,55 @@ nav a
     text-align: center;
     color: #0a0909;
     text-decoration: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    padding: 10px 20px;
+    top: 0%;
+    margin-bottom: 2rem;
+    padding-bottom: 3rem;
     transition: 0.2s ease color;
-    font-size: 25px;
+    font-size: 2rem;
+
+} */
+nav{
+    display: flex;
+    top: 0%;
+    bottom: 0%;
+    border-radius: 0rem 0rem 2rem 2rem;
+    width: 100%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    background: #5CA7EF;
+
+}
+.logo{
+    margin-left: 2rem;
+}
+.navbaritem{
+    margin-left: -3rem;
+}
+.navbaritem ul{
+    position: relative;
+    margin-left: -0.5rem;
+    list-style: none;
+    display: flex;
+    justify-content: left;
+    margin-left: 0rem;
+}
+.navbaritem ul li{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    margin-top: 1rem;
+    margin-left: 4rem;
+    
+}
+
+
+
+    
+nav img{
+    height: 7rem;
+    width: 7rem;
 }
 
 nav a:before, nav a:after
@@ -156,6 +207,25 @@ nav a:nth-child(3):hover ~ #indicator
     left: 70%;
     background: linear-gradient(130deg, purple, palevioletred);
 }
+.navbaritem ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 2rem;
+    font-family: 'Patua One', cursive;
+    
+    padding: 1rem;
+    transition: all 0.2s ease-out;
+}
+.navbaritem ul li a:hover{
+    color: white;
+    
+    background: linear-gradient(140.87deg, #8fa4c7 -29.92%, rgba(3, 103, 166, 0.44) 92.44%);
+    border-radius: 0.5rem;
+    transition: all 2sec ease-in;
+    border: 1px solid rgb(119, 123, 243);
+    /* padding:0.5rem 1rem 0.5rem 1rem; */
+    
+}
 
 
 div.a {
@@ -165,6 +235,48 @@ div.a {
 }
 p{font-size: 80px;
 
+}
+.headers{
+    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Poppins', sans-serif; */
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.subhead{
+    font-size: 3rem;
+    width: 55%;
+    display: block;
+    position: relative;
+    justify-content: center;
+    left: 23%;
+    color: white;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    background-color: #5CA7EF;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+.main-image{
+    margin-left: -6rem;
+    /* margin-top: 7rem; */
+}
+.main-image img{
+    border-radius: 0.5rem;
+    /* margin-right: 1rem; */
+}
+.content-mid{
+    margin-top: 13rem;
+    display: block;
+    text-align: center;
+    margin-left: -5rem;
+    /* font-size: 1rem; */
+    background: #5CA7EF;
+
+}
+.content-mid h2{
+    font-size: 2rem;
+    padding: 1rem;
 }
 
 
@@ -190,23 +302,33 @@ p{font-size: 80px;
 <div class="bg bg2"></div>
 <div class="bg bg3"></div>
 <nav>
-    <a href="#"><img src="/static/img/logo.png" alt="logo" width="110px" height="110px"></a>
-  <a href="{{ url_for('about') }}"><span>ABOUT</span></a>
-  <a href="{{ url_for('login') }}"><span>LOGIN</span></a>
+    <div class="logo"><a href="#"><img src="/static/img/logo.png" alt="logo" width="110px" height="110px"></a></div>
+    <div class="navbaritem">
+        <ul>
+            <li><a href="{{ url_for('login') }}"><span>LOGIN</span></a></li>
+            <li><a href="{{ url_for('about') }}"><span>ABOUT</span></a> </li>
+            
+        </ul>
+    </div>
+    
+
   <div id="indicator"></div>
 </nav>
 
 
 <div class="a">
         <div class="row">
-            <div class="col-md-7">
-                <p style="font-size:100px;font-family:'Comic',monospace">HEALTH RISK <br>ESTIMATOR</p>
-                <h1 style="font-size: 30px; font-weight: lighter; font-family:'Comic',monospace;">All your Healthcare needs at your finger tips.</h1>
-                <h2 style="font-size:30px; font-weight: bolder;font-family:'Comic',monospace">An easy and friendly way to know your health.</h2>
+            <div class="col-md-7 headers">
+                <p>HEALTH RISK <br>ESTIMATOR</p>
+                <p class="subhead">Find the good life by good health</p>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 main-image">
                 <img src="/static/img/pic.jpeg" width="550" height="350" style="align-self: center;">
             </div>
+        </div>
+        <div class="content-mid">
+            <h2>All your Healthcare needs at your finger tips.  An easy and friendly way to know your health.</h2>
+
         </div>
 </div>
 </body>

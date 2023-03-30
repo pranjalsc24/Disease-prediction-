@@ -4,6 +4,9 @@
 
     <meta charset="UTF-8">
     <title>Predict Diabetes</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Patua+One&family=Poppins:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
     <!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <style>
@@ -80,7 +83,9 @@
     outline: none;
 }
 .form-v4-content .form-left {
+	margin-top: -0.2rem;
 	background: #99ccff;
+	padding-bottom: 1rem;
 }
 .form-v4-content .form-left .form-left-last .input-text {
 	padding: 15px;
@@ -204,7 +209,7 @@ ul {
   list-style-type: none;
   margin: 0;
   overflow: hidden;
-  background-color:#6698cb;
+  background: #5CA7EF;
 }
 
 li a {
@@ -218,16 +223,57 @@ li a {
 
 li a:hover {
     color: white;
-    background-color: #111;
+    background: linear-gradient(140.87deg, #8fa4c7 -29.92%, rgba(3, 103, 166, 0.44) 92.44%);
+	border-radius: 0.5rem;
 }
+ul{
+	display: flex;
+	justify-content: space-between;
+}
+.profile a{
+	font-size: 1.5rem;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 200;
+	font-family: 'Roboto Slab', serif;
+margin-top: 1.5rem;
+}
+.form-v4-content h2{
+	font-family: 'Poppins', sans-serif;
+}
+.text-1{
+	font-family: 'Poppins', sans-serif;
+}
+.text-2{
+	font-family: 'Poppins', sans-serif;
+}
+.form-left{
+	margin-top: -0.5rem;
+	padding-bottom: 3rem;
+}
+.button{
+	border: none;
+	width: 12rem;
+	font-family: 'Poppins', sans-serif;
+	border-radius: 0.5rem;
+	transition: all 0.5s ease-out;
+	font-size: 1.2rem;
+}
+.button:hover{
+	color: white;
+	background: #1983cea5;
+}
+.medic{
+	border: 1px solid black;
+}
+
     </style>
 </head>
 
 
 <body class="form-v4">
 <ul>
-    <li style="float: left;"><a href="#"><img src="/static/img/logo.png" alt="logo" width="90px" height="90px"></a></li>
-    <li style="float: right; padding-top: 30px; padding-right: 15px;"><a href="{{ url_for('profile') }}">PROFILE</a></li>
+    <li ><a href="#"><img src="/static/img/logo.png" alt="logo" width="90px" height="90px" ></a></li>
+    <li class="profile"><a href="{{ url_for('profile') }}">PROFILE</a></li>
 </ul>
 	<div class="page-content">
 		<div class="form-v4-content">
@@ -236,7 +282,7 @@ li a:hover {
 				<p class="text-1"> FILL THE DETAILS</p>
 				<p class="text-2"> We will soon get back to your results.<br> If the prediction percentage is higher than 40, You are at high risk of diabetes please consult your doctor</p>
                 <h3 class="p"> {{ pred }} </h3>
-                <a href="{{ url_for('diabetesm') }}"><input type="button" class="button" value="Medication"></a>
+                <a href="{{ url_for('diabetesm') }}"><input type="button" class="button medic" value="Medication"></a>
 			</div>
 			<form class="form-detail" action="{{url_for('predictd')}}" method="post" id="myform">
 				<h2>Patient details</h2>
