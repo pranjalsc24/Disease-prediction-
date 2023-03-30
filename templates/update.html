@@ -9,6 +9,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/static/css/login.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Patua+One&family=Poppins:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
+
 <style>
     body {
   margin:0;
@@ -28,7 +32,7 @@
             }
 .bg {
   animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #a3c891 50%, #9ebfd6 50%);
+  background-image: linear-gradient(-60deg, #86cae1 50%, #1983cea5 50%);
   bottom:0;
   left:-50%;
   opacity:.5;
@@ -50,7 +54,7 @@
 .row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}
 .col-md-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}
 
-.card{
+/* .card{
     position:relative;
     display:-ms-flexbox;
     display:flex;
@@ -62,7 +66,7 @@
     background-clip:border-box;
     border:1px solid rgba(0,0,0,.125);
     border-radius:.25rem
-}
+} */
 
 *, ::after, ::before {
     box-sizing: border-box;
@@ -83,12 +87,54 @@
 
     .A{ font-family: sans-serif;color:#1a0000;}
     .mt-100{margin-left: 50px; margin-top: 20px;margin-right: 10px;}
-    .form {border: 20px solid #f1f1f1; }
+    /* .form {border: 20px solid #f1f1f1; } */
 
 div.a {
   text-align: center;
 }
+.card label{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0.5rem;
+    
+}
+.label{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+.card input{
+    font-family: 'Poppins', sans-serif;
+    /* background: rgba(255, 255, 255, 0.31); */
+    box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(30px);
+}
+.button{
+                background-color: #5CA7EF;
+                color: black;
+                text-align: center;
+                padding: 1rem;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+                align-self: center;
+                border: none;
+                padding-left: 2rem;
+                padding-right: 2rem;
+                border-radius: 0.5rem;
+                transition: all 0.2s ease-out;
 
+            }
+.button:hover{
+    color: white;
+}
+.radio{
+    display: flex;
+    gap: 1rem;
+}
+.radio input{
+    margin-top: -0.5rem;
+}
 </style>
 
       <title>Update</title>
@@ -103,7 +149,7 @@ div.a {
 
     </div>
     <div class="a">
-                <h1 class="text-dark display-4 mt-100" style="font-size: 30px;font-family:'Comic Sans MS' ">Please fill the updated details...</h1>
+                <h1 class="text-dark display-4 mt-100" style=" font-family: 'Poppins', sans-serif;">Please fill the updated details</h1>
                 </div>
     <div class="row">
             <div class="col-md-4">
@@ -112,28 +158,28 @@ div.a {
                 <div class="card mt-100 ">
                     <div class="card body">
                         <form class="form" method="post" action="{{ url_for('updating') }}">
-                             <label style="font-size: 20px;">Full Name</label><br>
+                             <label class="label">Full Name</label><br>
                             <label>
                                 <input type="text" class="form-control" name="uname">
                             </label><br>
-                            <label style="font-size: 20px;">Email</label><br>
+                            <label class="label">Email</label><br>
                             <label>
                                 <input type="email" class="form-control" name="uemail">
                             </label><br>
-                            <label style="font-size: 20px;">Username</label><br>
+                            <label class="label">Username</label><br>
                             <label>
                                 <input type="text" class="form-control" name="uusername" placeholder="Not changeable">
                             </label><br>
-                            <label style="font-size: 20px;">Password</label><br>
+                            <label class="label">Password</label><br>
                             <label>
                                 <input type="password" class="form-control" name="upassword">
                             </label><br>
-                            <label style="font-size: 20px;">Age</label><br>
+                            <label class="label">Age</label><br>
                             <label>
                                 <input type="number" class="form-control" name="uage">
                             </label><br>
-                            <label style="font-size: 20px;">Gender</label><br><br>
-                            <label>
+                            <label class="label">Gender</label><br><br>
+                            <label class="radio">
                                <input type="radio" name="ugender" value="Male">
                                 <label for="Male" style="font-size: 18px;">Male</label><br>
                                 <input type="radio" name="ugender" value="Female">

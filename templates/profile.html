@@ -3,7 +3,32 @@
 {% block title %} Profile {% endblock %}
 
 {% block content %}
-  <div>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Patua+One&family=Poppins:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
+</head>
+<style>
+.Main-data table tr{
+  margin-top: 1.4rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+
+}
+.button{
+  border: none;
+  background-color: #99ccff;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease-out;
+}
+.button:hover{
+  color: white;
+}
+</style>
+  <div class="Main-data">
     <p>Your details are below:</p>
     <table>
         <tr>

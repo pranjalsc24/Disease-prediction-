@@ -5,7 +5,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Patua+One&family=Poppins:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
 <title>{% block title %}{% endblock %}</title>
 
     <!-- Bootstrap CSS -->
@@ -17,7 +19,9 @@ ul {
   list-style-type: none;
   margin: 0;
   overflow: hidden;
-  background-color:#6698cb;
+  background-color:#5CA7EF;
+  display: flex;
+  justify-content: space-between;
 }
 
 li a {
@@ -26,7 +30,8 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-    font-size: 30px;
+    font-size: 2rem;
+    margin-top: 1rem;
 }
 
 li a:hover {
@@ -50,9 +55,9 @@ li a:hover {
     font-size: 20px;
     text-align: center;
     text-decoration: none;
-    -webkit-box-shadow: 0 -0.3rem 0 rgba(0, 0, 0, 0.1) inset;
+    /* -webkit-box-shadow: 0 -0.3rem 0 rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow: 0 -0.3rem 0 rgba(0, 0, 0, 0.1) inset;
-    box-shadow: 0 -0.3rem 0 rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 -0.3rem 0 rgba(0, 0, 0, 0.1) inset; */
     align-self: center;
 }
 .btn:hover, .btn:focus {
@@ -71,9 +76,10 @@ li a:hover {
 .select{top:90px;margin: 0;position: relative;}
 
 .content {
-  	width: 1000px;
+  	width: 50%;
   	margin: 0 auto;
     font-size: 19px;
+    margin-top: 1rem;
 }
 .content h2 {
   	margin: 0;
@@ -86,19 +92,32 @@ li a:hover {
   	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
   	margin: 25px 0;
   	padding: 25px;
-	background-color: #fff;
+      background:linear-gradient(-60deg, #86cae1 50%, #1983cea5 50%);
+      border-radius: 0.5rem;
 }
 .content > p table td, .content > div table td {
-	padding: 5px;
+    margin-top: 1rem;
+    padding: 5px;
+    margin-top: 1rem;
+    font-family: 'Poppins', sans-serif;
 }
 .content > p table td:first-child, .content > div table td:first-child {
+    font-family: 'Poppins', sans-serif;
 	font-weight: bold;
 	color: #4a536e;
 	padding-right: 15px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 .content > div p {
 	padding: 5px;
 	margin: 0 0 10px 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+}
+.content > div table tr{
+    margin-bottom: 1.5rem;
 }
 .button
             {
@@ -111,6 +130,60 @@ li a:hover {
                 font-size: 16px;
                 cursor: pointer;
             }
+.mainpage{
+    display: flex;
+    gap: 2rem;
+}
+.prediction-table{
+    margin-right: 5rem;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+}
+.prediction-table h2{
+    margin-top: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 100;
+}
+.btn{
+    
+  border: none;
+  background-color: #1983cea5;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 0.5rem;
+  transition: all 0.5s ease-out;
+color: black;
+padding-right: 1rem;
+padding-left: 1rem;
+padding-bottom: 1rem;
+height: 5rem;
+font-weight: 400;
+
+
+}
+.btn:hover{
+    /* background: rgba(255, 255, 255, 0.31); */
+    color: rgb(39, 12, 160);
+    color: white;
+}
+ul li img{
+    height: 7rem;
+    width: 7rem;
+    margin-left: 1rem;
+}
+.logout{
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+.logout a:hover{
+    color: white;
+	background: #1983cea5;
+}
 </style>
 
 
@@ -128,21 +201,26 @@ li a:hover {
     -->
 <body>
 <ul>
-    <li style="float: left;"><a href="#"><img src="/static/img/logo.png" alt="logo" width="90px" height="90px"></a></li>
-    <li style="float: right; padding-top: 30px; padding-right: 15px;"><a href="{{ url_for('logout') }}" style="float:right;">LOG OUT</a></li>
+    <li><img src="/static/img/logo.png" alt="logo"></li>
+    <li ><a href="{{ url_for('logout') }}" class="logout">LOG OUT</a></li>
 </ul>
 <br>
-  <div class="content">
-      {% block content %}{% endblock %}
-  </div>
-  <hr>
-    <h2 style="padding-left: 550px;">Select the disease you want to predict</h2>
-  <div style="padding-left: 650px;" >
-  <a href="{{ url_for('diabetes') }}"><button class="btn sky" style="text-align: center;">Predict Diabetes</button></a>
-  </div>
-  <div style="padding-left: 620px;">
-  <a href="{{ url_for('heart') }}"><button class="btn sky" style="text-align: center;">Predict Heart Disease</button></a>
-  </div>
+<div class="mainpage">
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="prediction-table">
+      <h2 >Select the disease you want to predict</h2>
+      <div >
+      <a href="{{ url_for('diabetes') }}"><button class="btn sky">Predict Diabetes</button></a>
+      </div>
+      <div >
+      <a href="{{ url_for('heart') }}"><button class="btn sky">Predict Heart Disease</button></a>
+      </div>
+    </div>
+</div>
+  
+    
     <br>
 
 </body>
