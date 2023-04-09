@@ -326,71 +326,96 @@ ul{
 				</div>
 				<br>
                 <div class="form-row">
-					<label for="height">Height</label>
+					<label for="height">Chest pain type</label>
                     <br><br><br><br><br>
-					<input type="number" required step="0.01" min="0" max="300" name="height" id="height" placeholder="Height (cm) eg. 185" class="input-text">
+					<input type="number" required step="0.01" min="0" max="300" name="height" id="height" placeholder="Pain type eg : (2)" class="input-text">
 				</div>
 				<br>
                 <div class="form-row">
-					<label for="weight">Weight</label>
+					<label for="weight">Resting blood pressure</label>
                     <br><br><br><br><br>
-					<input type="number" required step="0.01" min="0" max="300" name="weight" id="weight" placeholder="Weight (kg) eg. 80" class="input-text">
+					<input type="number" required step="0.01" min="0" max="300" name="weight" id="weight" placeholder="Blood pressure eg: 140" class="input-text">
 				</div>
 				<div class="form-row">
-					<label for="ap_hi">Arterial Pressure (High)</label>
+					<label for="ap_hi">Fasting blood sugar level</label>
                     <br><br><br><br><br>
-					<input type="number" required min="0" max="300" name="ap_hi" id="ap_hi" placeholder="Resting Blood Pressure (mmHg) eg. 80" class="input-text">
+					<input type="number" required min="0" max="300" name="ap_hi" id="ap_hi" placeholder="Sugar eg : (1 or 0)" class="input-text">
 				</div>
 				<div class="form-row">
-					<label for="ap_lo">Arterial Pressure (Low)</label>
+					<label for="ap_lo">Resting ECG</label>
                     <br><br><br><br><br>
-					<input type="number" required min="0" max="300" name="ap_lo" id="ap_lo" placeholder="Resting Blood Pressure (mmHg) eg. 80" class="input-text">
+					<input type="number" required min="0" max="300" name="ap_lo" id="ap_lo" placeholder="ECG value eg:(0 or 1)" class="input-text">
 				</div>
 				<div class="form-row">
 					<label for="cholesterol">Cholesterol</label>
                     <br><br><br><br><br>
-					<select required name="cholesterol" id="cholesterol" class="input-text" style="background-color: white;">
-						<option selected disabled hidden><i>Select a type</i></option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-					</select>
+					<input type="number" required name="cholesterol" id="cholesterol" placeholder="cholesterol value eg: 230" class="input-text">
 				</div>
 				<div class="form-row">
-					<label for="gluc">Glucose</label>
+					<label for="gluc">Maximum Heart rate achieved</label>
 					<br><br><br><br><br>
-					<select required name="gluc" id="gluc" class="input-text" style="background-color: white;">
+					<!-- <select required name="gluc" id="gluc" class="input-text" style="background-color: white;">
 						<option selected disabled hidden><i>Select option</i></option>
 						<option value="0">No</option>
 						<option value="1">Yes</option>
-					</select>
+					</select> -->
+					<input type="number" required name="gluc" id="gluc" placeholder="Max heart rate eg : 150" class="input-text">
+
 				</div>
 				<div class="form-row">
-					<label for="smoke">Do you smoke?</label>
+					<label for="smoke">Exercise induced angina</label>
 					<br><br><br><br><br>
-					<select required name="smoke" id="smoke" class="input-text" style="background-color: white;">
+					<!-- <select required name="smoke" id="smoke" class="input-text" style="background-color: white;">
 						<option selected disabled hidden><i>Select option</i></option>
 						<option value="0">No</option>
 						<option value="1">Yes</option>
-					</select>
+					</select> -->
+					<input type="number" required name="smoke" id="smoke" placeholder="Eg : ( 1 or 0 )" class="input-text">
+
 				</div>
 				<div class="form-row">
-					<label for="alco">Do you consume alcohol?</label>
+					<label for="alco">ST depression induced by Exercise</label>
 					<br><br><br><br><br>
-					<select required name="alco" id="alco" class="input-text" style="background-color: white;">
+					<!-- <select required name="alco" id="alco" class="input-text" style="background-color: white;">
 						<option selected disabled hidden><i>Select option</i></option>
 						<option value="0">No</option>
 						<option value="1">Yes</option>
-					</select>
+					</select> -->
+					<input type="number" required name="alco" id="alco" step="any" placeholder="Eg : (1.23)" class="input-text">
+
 				</div>
 				<div class="form-row">
-					<label for="active">Are you active?</label>
+					<label for="active">Slope of peak Exercise ST segment</label>
 					<br><br><br><br><br>
-					<select required name="active" id="active" class="input-text" style="background-color: white;">
+					<!-- <select required name="active" id="active" class="input-text" style="background-color: white;">
 						<option selected disabled hidden><i>Select option</i></option>
 						<option value="0">No</option>
 						<option value="1">Yes</option>
-					</select>
+					</select> -->
+					<input type="number" required name="active" id="active" placeholder="Eg : (1)" class="input-text">
+
+				</div>
+				<div class="form-row">
+					<label for="vessels">Number of major vessels</label>
+					<br><br><br><br><br>
+					<!-- <select required name="active" id="active" class="input-text" style="background-color: white;">
+						<option selected disabled hidden><i>Select option</i></option>
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select> -->
+					<input type="number" required name="vessels" id="vessels" placeholder="Eg : (0 or 1,2)" class="input-text">
+
+				</div>
+				<div class="form-row">
+					<label for="thal">Thalassemia value</label>
+					<br><br><br><br><br>
+					<!-- <select required name="active" id="active" class="input-text" style="background-color: white;">
+						<option selected disabled hidden><i>Select option</i></option>
+						<option value="0">No</option>
+						<option value="1">Yes</option>
+					</select> -->
+					<input type="number" required name="thal" id="thal" placeholder="Eg : (0 or 1,2)" class="input-text">
+
 				</div>
 
 <!-- 
