@@ -214,23 +214,25 @@ def predicth():
 def predicthnew():
     # 'age', 'gender', 'height', 'weight', 'bmi', 'ap_hi', 'ap_lo', 'cholesterol', 'gluc', 'smoke', 'alco', 'active'
 
-    print(request.form)
+    # print(request.form)
     age = float(request.form['age'])
     gender = int(request.form['gender'])
-    height = float(request.form['height'])
-    weight = float(request.form['weight'])
+    height = float(request.form['height'])#chest pain type
+    weight = float(request.form['weight'])#resting blood pressure
     
-    bmi =  bmi = weight / (height * height)
+    # bmi =  bmi = weight / (height * height)
 
-    ap_hi = int(request.form['ap_hi'])
-    ap_lo = int(request.form['ap_lo'])
-    cholesterol = int(request.form['cholesterol'])
-    gluc = int(request.form['gluc'])
-    smoke = int(request.form['smoke'])
-    alco = int(request.form['alco'])
-    active = int(request.form['active'])
+    ap_hi = int(request.form['ap_hi'])#fasting blood sugar level
+    ap_lo = int(request.form['ap_lo'])#resting ecg
+    cholesterol = int(request.form['cholesterol'])#5
+    gluc = int(request.form['gluc'])#maximun heart rate achieved
+    smoke = int(request.form['smoke'])#exercise induced angina
+    alco = float(request.form['alco'])#ST depression
+    active = int(request.form['active'])#slope of ST 
+    vessels = int(request.form['vessels'])#Number of major vessels
+    thal = int(request.form['thal'])#thal value
 
-    input_data = (age,gender,height,weight,bmi,ap_hi,ap_lo,cholesterol,gluc,smoke,alco,active)
+    input_data = (age,gender,height,weight,cholesterol,ap_hi,ap_lo,gluc,smoke,alco,active,vessels,thal)
     
     # Changing data to numpy array
     input_data_arr = np.asarray(input_data)
