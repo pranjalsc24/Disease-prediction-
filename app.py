@@ -176,17 +176,39 @@ def predictd():
 
 # standardize the input data
     std_data = sc.fit_transform(input_data_reshaped)
-    std_dat = sc.transform(input_data_reshaped)
-    # print(std_data)
+    std_data = sc.transform(input_data_reshaped)
+    std_data = sc.transform(input_data_reshaped)
+
+    print(std_data)
+
     prediction = modeld.predict(std_data)
     print(prediction)
 
-    #for probability
-    probability = modeld.predict_proba(input_data_reshaped)[:, 1]
-    print(probability)
+    if (prediction[0] == 0):
+        print('The person is not diabetic')
+    else:
+        print('The person is diabetic')
+#     input_data = (prg, glc, bp, skt, ins, bmi, dpf, age)
+
+# # changing the input_data to numpy array
+#     input_data_as_numpy_array = np.asarray(input_data)
+
+# # reshape the array as we are predicting for one instance
+#     input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
+
+# # standardize the input data
+#     std_data = sc.fit_transform(input_data_reshaped)
+#     std_data = sc.transform(input_data_reshaped)
+#     # print(std_data)
+#     prediction = modeld.predict(std_data)
+#     print(prediction)
+
+#     #for probability
+#     probability = modeld.predict_proba(input_data_reshaped)[:, 1]
+#     print(probability)
     
 
-    if prediction == 1:
+    if (prediction[0] == 0):
         return render_template('diabetes.html', pred='You have Diabetes. Please Consult a Doctor')
     else:
         probability = (float(probability) * 100) 
