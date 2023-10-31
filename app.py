@@ -12,14 +12,15 @@ import pickle
 import pandas as pd
 import numpy as np
 import os
+import joblib
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
-conn = mysql.connector.connect(host="localhost", user="root", password="Yash@2106", database="miniproj")
+conn = mysql.connector.connect(host="localhost", user="root", password="pranjal24", database="miniproj")
 # conn = sqlite3.connect('database.db', check_same_thread=False)
 cursor = conn.cursor()
-modeld = pickle.load(open("diabetes_model.sav", "rb"))
-modelh = pickle.load(open("heart_disease_model.sav", "rb"))
+modeld = joblib.load(open("diabetes_model.sav", "rb"))
+modelh = joblib.load(open("heart_disease_model.sav", "rb"))
 # modelhn = pickle.load(open("heart_new.pkl", "rb"))
 
 
